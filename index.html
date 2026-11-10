@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the great</title>
+<meta name="description" content="the great: caps made to be worn every day. Shop the latest drop.">
+<meta name="theme-color" content="#41071d">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="the great">
+<meta property="og:description" content="Caps made to be worn every day. Shop the latest drop.">
+<meta property="og:image" content="assets/share-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&amp;display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="root"></div>
+<template id="tpl">
+
+<div style="font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: #14161A; background: #F6F6F3">
+<div class="progress" aria-hidden="true" style="position: fixed; top: 0; left: 0; right: 0; height: 4px; background: #C9B28A; transform-origin: 0 50%; transform: scaleX(0); z-index: 60"></div>
+
+<div style="background: #14161A; color: #F6F6F3; text-align: center; padding: 12px 24px; font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase">[Free shipping message]</div>
+
+<header class="pad" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 20px 80px; background: {{accent}}; color: #F6F6F3">
+<a href="#" class="logo" aria-label="the great" style="width: 104px; aspect-ratio: 717/371; color: #F6F6F3"></a>
+<nav class="nav" style="display: flex; gap: 36px; font-size: 15px; font-weight: 500; flex-wrap: wrap; align-items: center">
+<div style="position: relative">
+<button type="button" data-click="{{ toggleShop }}" aria-expanded="{{ shopOpen }}" style="background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0; min-height: 44px; display: inline-flex; align-items: center">Shop<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="margin-left: 6px"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+<sc-if value="{{ shopOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 100%; left: 0; margin-top: 4px; z-index: 30; min-width: 220px; border-radius: 16px; background: rgba(255,255,255,.46); -webkit-backdrop-filter: blur(22px) saturate(1.8); backdrop-filter: blur(22px) saturate(1.8); border: 1px solid rgba(255,255,255,.55); color: #14161A; padding: 8px; display: flex; flex-direction: column; box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 12px 32px rgba(20,22,26,.25)">
+<sc-for list="{{ shopMenu }}" as="m" hint-placeholder-count="4">
+<button type="button" class="mi" data-click="{{ m.go }}" style="background: none; border: 0; color: #14161A; font: inherit; text-align: left; padding: 12px 16px; min-height: 44px; cursor: pointer">{{ m.label }}</button>
+</sc-for>
+</div>
+</sc-if>
+</div>
+<div style="position: relative">
+<button type="button" data-click="{{ toggleColl }}" aria-expanded="{{ collOpen }}" style="background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0; min-height: 44px; display: inline-flex; align-items: center">Collections<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="margin-left: 6px"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+<sc-if value="{{ collOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 100%; left: 0; margin-top: 4px; z-index: 30; min-width: 220px; border-radius: 16px; background: rgba(255,255,255,.46); -webkit-backdrop-filter: blur(22px) saturate(1.8); backdrop-filter: blur(22px) saturate(1.8); border: 1px solid rgba(255,255,255,.55); color: #14161A; padding: 8px; display: flex; flex-direction: column; box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 12px 32px rgba(20,22,26,.25)">
+<sc-for list="{{ collMenu }}" as="m" hint-placeholder-count="4">
+<button type="button" class="mi" data-click="{{ m.go }}" style="background: none; border: 0; color: #14161A; font: inherit; text-align: left; padding: 12px 16px; min-height: 44px; cursor: pointer">{{ m.label }}</button>
+</sc-for>
+</div>
+</sc-if>
+</div>
+<a href="#">Our story</a>
+<div style="position: relative">
+<button type="button" data-click="{{ toggleContact }}" aria-expanded="{{ contactOpen }}" style="background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0; min-height: 44px; display: inline-flex; align-items: center">Contact<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="margin-left: 6px"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+<sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 100%; right: 0; margin-top: 4px; z-index: 30; min-width: 260px; border-radius: 16px; background: rgba(255,255,255,.46); -webkit-backdrop-filter: blur(22px) saturate(1.8); backdrop-filter: blur(22px) saturate(1.8); border: 1px solid rgba(255,255,255,.55); color: #14161A; padding: 8px; display: flex; flex-direction: column; box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 12px 32px rgba(20,22,26,.25)">
+<a class="mi" href="#" style="display: block; padding: 10px 16px; min-height: 44px; box-sizing: border-box"><span style="display: block; font-weight: 700">Email us</span><span style="display: block; font-size: 13px; color: #26292E">[your email address]</span></a>
+<a class="mi" href="#" style="display: block; padding: 10px 16px; min-height: 44px; box-sizing: border-box"><span style="display: block; font-weight: 700">Instagram</span><span style="display: block; font-size: 13px; color: #26292E">@[your handle]</span></a>
+<a class="mi" href="#" style="display: block; padding: 10px 16px; min-height: 44px; box-sizing: border-box"><span style="display: block; font-weight: 700">TikTok</span><span style="display: block; font-size: 13px; color: #26292E">@[your handle]</span></a>
+<a class="mi" href="#" style="display: block; padding: 10px 16px; min-height: 44px; box-sizing: border-box"><span style="display: block; font-weight: 700">WhatsApp</span><span style="display: block; font-size: 13px; color: #26292E">[your number]</span></a>
+</div>
+</sc-if>
+</div>
+</nav>
+<div style="display: flex; align-items: center; gap: 4px">
+<button type="button" data-click="{{ openAcct }}" aria-label="Account" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: none; border: 0; padding: 0; color: inherit; cursor: pointer">
+<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+<sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; top: 6px; right: 4px; width: 10px; height: 10px; border-radius: 50%; background: #C9B28A; border: 2px solid {{accent}}; box-sizing: border-box"></span></sc-if>
+</button>
+<button type="button" data-click="{{ openCart }}" aria-label="Open cart" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: none; border: 0; padding: 0; color: inherit; cursor: pointer">
+<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 10.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.1L20 8H6.2"></path><circle cx="9.5" cy="19.5" r="1.5"></circle><circle cx="17" cy="19.5" r="1.5"></circle></svg>
+<sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; top: 2px; right: 0; min-width: 20px; height: 20px; padding: 0 5px; box-sizing: border-box; border-radius: 999px; background: #C9B28A; color: #14161A; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ cart }}</span></sc-if>
+</button>
+</div>
+</header>
+
+<section class="pad hero" style="background: {{accent}}; color: #F6F6F3; padding: 48px 80px 96px; display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap">
+<div class="col" style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 28px">
+<div style="align-self: flex-start; border-radius: 999px; background: #F6F6F3; color: #14161A; padding: 6px 12px; font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase">New drop</div>
+<h1 style="margin: 0; font-size: clamp(48px, 7vw, 104px); line-height: .95; font-weight: 900; text-transform: uppercase">Wear it<br>every day.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #E8D9DF; max-width: 480px">[Your brand promise in one sentence]</p>
+<div class="cta" style="display: flex; gap: 16px; flex-wrap: wrap">
+<a href="#shop" style="background: #F6F6F3; color: #14161A; padding: 16px 32px; font-weight: 700; font-size: 16px; min-height: 44px; box-sizing: border-box">Shop caps</a>
+<a href="#" style="border: 2px solid #F6F6F3; padding: 14px 32px; font-weight: 700; font-size: 16px; min-height: 44px; box-sizing: border-box">View lookbook</a>
+</div>
+</div>
+<div class="col heroart parallax" style="flex: 1 1 420px; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 38%, #783C5F 0%, #1D2026 68%); border-radius: 32px; padding: 72px 40px 88px; display: flex; align-items: center; justify-content: center">
+<span style="position: absolute; top: 24px; left: 28px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #B9BCC2">Burgundy</span>
+<span aria-hidden="true" class="fshadow" style="position: absolute; left: 20%; right: 20%; bottom: 56px; height: 26px; border-radius: 50%; background: rgba(0,0,0,.65); filter: blur(16px)"></span>
+<span class="cap cap-wine float" role="img" aria-label="Burgundy cap" style="position: relative; max-width: 560px; filter: drop-shadow(0 0 30px rgba(190,80,120,.22))"></span>
+</div>
+</section>
+
+<div aria-hidden="true" style="background: #14161A; color: #F6F6F3; overflow: hidden; white-space: nowrap; padding: 18px 0; border-top: 1px solid rgba(246,246,243,.15)">
+<div class="marq" style="display: inline-flex; gap: 48px; padding-right: 48px; font-weight: 900; font-size: 20px; letter-spacing: .12em; text-transform: uppercase"><span>New drop</span><span style="color: #C9B28A">/</span><span>Limited run</span><span style="color: #C9B28A">/</span><span>Embroidered detail</span><span style="color: #C9B28A">/</span><span>Adjustable fit</span><span style="color: #C9B28A">/</span><span>Worn every day</span><span style="color: #C9B28A">/</span><span>New drop</span><span style="color: #C9B28A">/</span><span>Limited run</span><span style="color: #C9B28A">/</span><span>Embroidered detail</span><span style="color: #C9B28A">/</span><span>Adjustable fit</span><span style="color: #C9B28A">/</span><span>Worn every day</span><span style="color: #C9B28A">/</span><span>New drop</span><span style="color: #C9B28A">/</span><span>Limited run</span><span style="color: #C9B28A">/</span><span>Embroidered detail</span><span style="color: #C9B28A">/</span><span>Adjustable fit</span><span style="color: #C9B28A">/</span><span>Worn every day</span><span style="color: #C9B28A">/</span><span>New drop</span><span style="color: #C9B28A">/</span><span>Limited run</span><span style="color: #C9B28A">/</span><span>Embroidered detail</span><span style="color: #C9B28A">/</span><span>Adjustable fit</span><span style="color: #C9B28A">/</span><span>Worn every day</span><span style="color: #C9B28A">/</span></div>
+</div>
+
+<section id="shop" class="pad sec" style="padding: 96px 80px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 16px">
+<h2 class="h2" style="margin: 0; font-size: 48px; font-weight: 900; text-transform: uppercase">Shop the caps</h2>
+<button type="button" data-click="{{ viewAll }}" style="font: inherit; font-weight: 700; color: #14161A; background: none; border: 0; border-bottom: 2px solid #14161A; border-radius: 0; padding: 0 0 2px; cursor: pointer">View all</button>
+</div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="5">
+<button type="button" data-click="{{ c.pick }}" aria-pressed="{{ c.on }}" style="min-height: 44px; padding: 0 20px; border: 2px solid #14161A; border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer; background: {{ c.bg }}; color: {{ c.fg }}">{{ c.label }}</button>
+</sc-for>
+</div>
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px">
+<sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+<div class="pc" style="display: {{ it.display }}; position: relative">
+<button type="button" data-click="{{ it.view }}" style="display: block; width: 100%; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer">
+<span style="display: block; background: #E8E6DF; border-radius: 16px; padding: 28px 20px"><span class="{{ it.cls }}" role="img" aria-label="{{ it.name }}, {{ it.color }}"></span></span>
+<span style="display: flex; justify-content: space-between; padding-top: 16px"><span><span style="display: block; font-weight: 700; font-size: 18px">{{ it.name }}</span><span style="display: block; color: #5A5E66; font-size: 15px">{{ it.color }}</span></span><span style="font-weight: 700">{{ it.priceLabel }}</span></span>
+</button>
+<button type="button" data-click="{{ it.toggleWish }}" aria-pressed="{{ it.wished }}" aria-label="{{ it.wishLabel }}" style="position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border-radius: 50%; border: 0; padding: 0; background: rgba(255,255,255,.75); color: #14161A; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="{{ it.heartFill }}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5.5 6.4 5.5c1.9 0 3.5 1 4.4 2.5l1.2 1.6 1.2-1.6c.9-1.5 2.5-2.5 4.4-2.5 3.2 0 5.2 3.1 3.9 6.3C19.5 16.4 12 21 12 21z"/></svg></button>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="drop" class="pad sec" style="background: {{accent}}; color: #F6F6F3; padding: 80px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<div style="font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #C9B28A">Limited drop</div>
+<h2 class="h2" style="margin: 0; font-size: clamp(36px, 5vw, 64px); font-weight: 900; text-transform: uppercase; line-height: 1">Next drop in</h2>
+<sc-if value="{{ dropWait }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center">
+<div style="min-width: 88px; padding: 16px 12px; border-radius: 16px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28)"><div style="font-size: clamp(32px, 6vw, 56px); font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums">{{ cdDays }}</div><div style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #E8D9DF; margin-top: 6px">Days</div></div><div style="min-width: 88px; padding: 16px 12px; border-radius: 16px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28)"><div style="font-size: clamp(32px, 6vw, 56px); font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums">{{ cdHours }}</div><div style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #E8D9DF; margin-top: 6px">Hours</div></div><div style="min-width: 88px; padding: 16px 12px; border-radius: 16px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28)"><div style="font-size: clamp(32px, 6vw, 56px); font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums">{{ cdMins }}</div><div style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #E8D9DF; margin-top: 6px">Minutes</div></div><div style="min-width: 88px; padding: 16px 12px; border-radius: 16px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28)"><div style="font-size: clamp(32px, 6vw, 56px); font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums">{{ cdSecs }}</div><div style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #E8D9DF; margin-top: 6px">Seconds</div></div>
+</div>
+</sc-if>
+<sc-if value="{{ dropLive }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 20px; font-weight: 700">The new drop is live. Shop it now.</p></sc-if>
+<p style="margin: 0; color: #E8D9DF; max-width: 480px; line-height: 1.5">Leave your email and we’ll tell you the moment it lands.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 520px">
+<label for="notify-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<input id="notify-email" type="email" placeholder="Your email" style="flex: 1 1 240px; min-height: 52px; box-sizing: border-box; padding: 0 20px; font-size: 16px; font-family: inherit; border: 2px solid #F6F6F3; background: #F6F6F3; color: #14161A">
+<button type="button" data-click="{{ notify }}" style="min-height: 52px; padding: 0 32px; font-size: 16px; font-weight: 700; font-family: inherit; background: #C9B28A; color: #14161A; border: 0; cursor: pointer">Notify me</button>
+</div>
+<sc-if value="{{ notifyBad }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #F6F6F3; font-size: 18px; font-weight: 700">Please enter a valid email address.</p></sc-if>
+<sc-if value="{{ notified }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #F6F6F3; font-size: 18px; font-weight: 700">Thanks, we’ll email you when it drops.</p></sc-if>
+<sc-if value="{{ notifyFail }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #F6F6F3; font-size: 18px; font-weight: 700">Something went wrong. Please try again.</p></sc-if>
+</section>
+
+<section class="pad sec" style="background: #14161A; color: #F6F6F3; padding: 96px 80px; display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap">
+<div class="col" style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px">
+<div style="font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #C9B28A">Signature cap</div>
+<h2 class="h2" style="margin: 0; font-size: clamp(40px, 6vw, 80px); font-weight: 900; line-height: .95; text-transform: uppercase">Built to be<br>worn in.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B9BCC2; max-width: 460px">[Short story about your signature cap]</p>
+<div><button type="button" data-click="{{ viewSig }}" style="min-height: 52px; padding: 0 32px; background: #F6F6F3; color: #14161A; border: 0; font: inherit; font-weight: 700; font-size: 16px; cursor: pointer">Quick view</button></div>
+</div>
+<div class="col" style="flex: 1 1 420px; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 38%, #3B3329 0%, #1D2026 68%); border-radius: 32px; padding: 72px 40px 88px; display: flex; align-items: center; justify-content: center">
+<span style="position: absolute; top: 24px; left: 28px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #B9BCC2">Sand</span>
+<span aria-hidden="true" class="fshadow" style="position: absolute; left: 20%; right: 20%; bottom: 56px; height: 26px; border-radius: 50%; background: rgba(0,0,0,.65); filter: blur(16px)"></span>
+<span class="cap cap-sand-dark float" role="img" aria-label="Sand cap" style="position: relative; max-width: 560px; filter: drop-shadow(0 0 30px rgba(201,178,138,.16))"></span>
+</div>
+</section>
+
+<section class="pad sec" style="background: #E8E6DF; padding: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px"><div style="font-weight: 900; font-size: 18px">01</div><h3 style="margin: 0; font-size: 24px; font-weight: 700">[Feature one]</h3><p style="margin: 0; line-height: 1.5; color: #3F434A">[One line on what makes your caps different]</p></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><div style="font-weight: 900; font-size: 18px">02</div><h3 style="margin: 0; font-size: 24px; font-weight: 700">[Feature two]</h3><p style="margin: 0; line-height: 1.5; color: #3F434A">[One line on materials or fit]</p></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><div style="font-weight: 900; font-size: 18px">03</div><h3 style="margin: 0; font-size: 24px; font-weight: 700">[Feature three]</h3><p style="margin: 0; line-height: 1.5; color: #3F434A">[One line on shipping or returns]</p></div>
+</section>
+
+<section class="pad sec" style="background: #E8E6DF; padding: 96px 80px; display: flex; flex-direction: column; gap: 32px">
+<h2 class="h2" style="margin: 0; font-size: 48px; font-weight: 900; text-transform: uppercase">What people say</h2>
+<p style="margin: 0; max-width: 900px; font-size: clamp(24px, 3vw, 40px); font-weight: 700; line-height: 1.25">“{{ rv.quote }}”</p>
+<div style="color: #5A5E66; font-size: 16px">{{ rv.who }}</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<button type="button" aria-label="Previous review" data-click="{{ rvPrev }}" style="width: 52px; height: 52px; border-radius: 50%; border: 2px solid #14161A; background: none; color: #14161A; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+<button type="button" aria-label="Next review" data-click="{{ rvNext }}" style="width: 52px; height: 52px; border-radius: 50%; border: 2px solid #14161A; background: none; color: #14161A; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+<span style="font-weight: 700; margin-left: 8px">{{ rvCount }}</span>
+</div>
+</section>
+
+<section class="pad sec" style="padding: 96px 80px; display: flex; flex-direction: column; gap: 32px">
+<h2 class="h2" style="margin: 0; font-size: 48px; font-weight: 900; text-transform: uppercase">Questions</h2>
+<div style="display: flex; flex-direction: column; max-width: 880px; border-top: 2px solid #14161A">
+<sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+<div style="border-bottom: 2px solid #14161A">
+<button type="button" data-click="{{ f.toggle }}" aria-expanded="{{ f.open }}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: none; border: 0; padding: 24px 0; min-height: 44px; font: inherit; font-size: 20px; font-weight: 700; color: #14161A; text-align: left; cursor: pointer"><span>{{ f.q }}</span><span aria-hidden="true" style="font-size: 28px; line-height: 1">{{ f.mark }}</span></button>
+<sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><p style="margin: 0 0 24px; line-height: 1.6; color: #3F434A; max-width: 640px">{{ f.a }}</p></sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section class="pad sec" style="background: {{accent}}; padding: 96px 80px; display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; font-size: clamp(36px, 5vw, 64px); font-weight: 900; text-transform: uppercase; line-height: 1; color: #F6F6F3">Get first dibs on new drops</h2>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; max-width: 560px">
+<label for="email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<input id="email" type="email" placeholder="Your email" style="flex: 1 1 240px; min-height: 52px; box-sizing: border-box; padding: 0 20px; font-size: 16px; font-family: inherit; border: 2px solid #14161A; background: #F6F6F3; color: #14161A">
+<button type="button" style="min-height: 52px; padding: 0 32px; font-size: 16px; font-weight: 700; font-family: inherit; background: #F6F6F3; color: #14161A; border: 0; cursor: pointer" data-click="{{ join }}">Sign up</button>
+</div>
+<sc-if value="{{ badEmail }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #F6F6F3; font-size: 18px; font-weight: 700">Please enter a valid email address.</p></sc-if>
+<sc-if value="{{ joined }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #F6F6F3; font-size: 18px; font-weight: 700">Thanks, you’re on the list.</p></sc-if>
+<sc-if value="{{ failed }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #F6F6F3; font-size: 18px; font-weight: 700">Something went wrong. Please try again.</p></sc-if>
+</section>
+
+<footer class="pad foot" style="background: #14161A; color: #F6F6F3; padding: 64px 80px 40px; display: flex; flex-direction: column; gap: 48px">
+<div class="footcols" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px">
+<div class="logo" role="img" aria-label="the great" style="width: 150px; aspect-ratio: 717/371; color: #F6F6F3"></div>
+<div style="display: flex; flex-direction: column; gap: 12px; color: #B9BCC2"><div style="color: #F6F6F3; font-weight: 700">Shop</div><a href="#">All caps</a><a href="#">New arrivals</a></div>
+<div style="display: flex; flex-direction: column; gap: 12px; color: #B9BCC2"><div style="color: #F6F6F3; font-weight: 700">Help</div><a href="#">Shipping</a><a href="#">Returns</a></div>
+<div style="display: flex; flex-direction: column; gap: 12px; color: #B9BCC2"><div style="color: #F6F6F3; font-weight: 700">Follow</div><a href="#">Instagram</a><a href="#">TikTok</a></div>
+</div>
+<div class="logo" aria-hidden="true" style="width: 100%; height: clamp(220px, 36vw, 520px); opacity: .12; background-position: center"></div>
+<div style="color: #B9BCC2; font-size: 14px">© 2026 the great. All rights reserved.</div>
+</footer>
+
+<sc-if value="{{ acctOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 110; display: flex; justify-content: flex-end">
+<button type="button" aria-label="Close account" data-click="{{ closeAcct }}" style="position: absolute; inset: 0; width: 100%; background: rgba(20,22,26,.28); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); border: 0; cursor: pointer"></button>
+<aside class="drawer" aria-label="Account" style="position: relative; z-index: 1; width: 100%; max-width: 420px; height: 100%; background: rgba(255,255,255,.55); -webkit-backdrop-filter: blur(26px) saturate(1.8); backdrop-filter: blur(26px) saturate(1.8); border-left: 1px solid rgba(255,255,255,.5); color: #14161A; display: flex; flex-direction: column; padding: 28px; box-sizing: border-box; gap: 20px; overflow-y: auto">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<h3 style="margin: 0; font-size: 28px; font-weight: 900; text-transform: uppercase">Your account</h3>
+<button type="button" aria-label="Close account" data-click="{{ closeAcct }}" style="background: none; border: 0; cursor: pointer; width: 44px; height: 44px; color: #14161A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+</div>
+<sc-if value="{{ signedOut }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; gap: 8px">
+<button type="button" data-click="{{ pickLogin }}" style="flex: 1; min-height: 44px; border: 2px solid #14161A; font: inherit; font-weight: 700; cursor: pointer; background: {{ loginBg }}; color: {{ loginFg }}">Log in</button>
+<button type="button" data-click="{{ pickSignup }}" style="flex: 1; min-height: 44px; border: 2px solid #14161A; font: inherit; font-weight: 700; cursor: pointer; background: {{ signupBg }}; color: {{ signupFg }}">Sign up</button>
+</div>
+<sc-if value="{{ hasAcctNote }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-weight: 700">{{ acctNote }}</p></sc-if>
+<sc-if value="{{ isSignup }}" hint-placeholder-val="{{ false }}"><div><label for="acct-name" style="display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px">Your name</label><input id="acct-name" type="text" autocomplete="name" style="width: 100%; min-height: 48px; box-sizing: border-box; padding: 0 14px; font-size: 16px; font-family: inherit; border: 2px solid #14161A; background: rgba(255,255,255,.85); color: #14161A"></div></sc-if>
+<div><label for="acct-email" style="display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px">Email address</label><input id="acct-email" type="email" autocomplete="email" style="width: 100%; min-height: 48px; box-sizing: border-box; padding: 0 14px; font-size: 16px; font-family: inherit; border: 2px solid #14161A; background: rgba(255,255,255,.85); color: #14161A"></div>
+<div><label for="acct-pass" style="display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px">Password</label><input id="acct-pass" type="password" autocomplete="current-password" style="width: 100%; min-height: 48px; box-sizing: border-box; padding: 0 14px; font-size: 16px; font-family: inherit; border: 2px solid #14161A; background: rgba(255,255,255,.85); color: #14161A"></div>
+<sc-if value="{{ hasAcctError }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #B3261E; font-weight: 700">{{ acctError }}</p></sc-if>
+<button type="button" data-click="{{ submitAcct }}" style="min-height: 52px; background: {{accent}}; color: #F6F6F3; border: 0; font: inherit; font-weight: 700; font-size: 16px; cursor: pointer">{{ submitLabel }}</button>
+<p style="margin: 0; color: #2A2D33; font-size: 13px; line-height: 1.5">Demo only: nothing you type here is checked, saved or sent anywhere.</p>
+</sc-if>
+<sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}">
+<div><div style="font-size: 22px; font-weight: 700">Hi, {{ userName }}</div><div style="color: #2A2D33">{{ userEmail }}</div></div>
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">Your orders</h4>
+<sc-if value="{{ noOrders }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #2A2D33; line-height: 1.5">Nothing here yet. Orders you place will show up here so you can track them.</p></sc-if>
+<sc-for list="{{ orders }}" as="o" hint-placeholder-count="1">
+<div style="border: 1px solid rgba(20,22,26,.22); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; font-weight: 700"><span>{{ o.id }}</span><span>{{ o.total }}</span></div>
+<div style="color: #2A2D33; font-size: 14px">{{ o.date }} / {{ o.items }}</div>
+<div style="height: 6px; border-radius: 3px; background: rgba(20,22,26,.22); overflow: hidden"><div style="height: 100%; width: {{ o.pct }}%; background: {{accent}}"></div></div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #2A2D33"><span style="font-weight: 700; color: #14161A">Placed</span><span>Packed</span><span>Shipped</span><span>Delivered</span></div>
+</div>
+</sc-for>
+<button type="button" data-click="{{ signOut }}" style="min-height: 48px; background: none; border: 2px solid #14161A; color: #14161A; font: inherit; font-weight: 700; cursor: pointer">Sign out</button>
+</sc-if>
+<sc-if value="{{ hasWish }}" hint-placeholder-val="{{ false }}">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">Saved caps</h4>
+<sc-for list="{{ wishItems }}" as="sv" hint-placeholder-count="1">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(20,22,26,.22)">
+<div><div style="font-weight: 700">{{ sv.name }}</div><div style="color: #2A2D33; font-size: 15px">{{ sv.color }} / {{ sv.priceLabel }}</div></div>
+<div style="display: flex; gap: 4px"><button type="button" data-click="{{ sv.view }}" style="min-height: 44px; padding: 0 14px; background: none; border: 2px solid #14161A; color: #14161A; font: inherit; font-weight: 700; cursor: pointer">View</button><button type="button" data-click="{{ sv.remove }}" style="min-height: 44px; padding: 0 12px; background: none; border: 0; color: #14161A; font: inherit; text-decoration: underline; cursor: pointer">Remove</button></div>
+</div>
+</sc-for>
+</sc-if>
+</aside>
+</div>
+</sc-if>
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 110; display: flex; justify-content: flex-end">
+<button type="button" aria-label="Close cart" data-click="{{ closeCart }}" style="position: absolute; inset: 0; width: 100%; background: rgba(20,22,26,.28); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); border: 0; cursor: pointer"></button>
+<aside class="drawer" aria-label="Cart" style="position: relative; z-index: 1; width: 100%; max-width: 420px; height: 100%; background: rgba(255,255,255,.55); -webkit-backdrop-filter: blur(26px) saturate(1.8); backdrop-filter: blur(26px) saturate(1.8); border-left: 1px solid rgba(255,255,255,.5); color: #14161A; display: flex; flex-direction: column; padding: 28px; box-sizing: border-box; gap: 20px; overflow-y: auto">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<h3 style="margin: 0; font-size: 28px; font-weight: 900; text-transform: uppercase">Your cart</h3>
+<button type="button" aria-label="Close cart" data-click="{{ closeCart }}" style="background: none; border: 0; cursor: pointer; width: 44px; height: 44px; color: #14161A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+</div>
+<sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: #2A2D33">Your cart is empty.</p></sc-if>
+<sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}"><div><div style="font-weight: 700; font-size: 14px; margin-bottom: 8px">{{ shipText }}</div><div style="height: 8px; border-radius: 4px; background: rgba(20,22,26,.15); overflow: hidden"><div style="height: 100%; width: {{ shipPct }}%; background: {{accent}}"></div></div></div></sc-if>
+<sc-for list="{{ lines }}" as="l" hint-placeholder-count="2">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(20,22,26,.22)">
+<div><div style="font-weight: 700">{{ l.name }}</div><div style="color: #2A2D33; font-size: 15px">{{ l.color }} / {{ l.lineTotal }}</div></div>
+<div style="display: flex; align-items: center; gap: 4px">
+<button type="button" aria-label="One fewer" data-click="{{ l.dec }}" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #14161A; background: none; color: #14161A; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+<span style="min-width: 24px; text-align: center; font-weight: 700">{{ l.qty }}</span>
+<button type="button" aria-label="One more" data-click="{{ l.inc }}" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #14161A; background: none; color: #14161A; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+</div>
+</div>
+</sc-for>
+<sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
+<div>
+<label for="promo" style="display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px">Promo code</label>
+<div style="display: flex; gap: 8px"><input id="promo" type="text" autocomplete="off" placeholder="Enter code" style="flex: 1; min-width: 0; min-height: 48px; box-sizing: border-box; padding: 0 14px; font-size: 16px; font-family: inherit; border: 2px solid #14161A; background: rgba(255,255,255,.85); color: #14161A"><button type="button" data-click="{{ applyPromo }}" style="min-height: 48px; padding: 0 20px; background: #14161A; color: #F6F6F3; border: 0; font: inherit; font-weight: 700; cursor: pointer">Apply</button></div>
+<sc-if value="{{ hasPromoMsg }}" hint-placeholder-val="{{ false }}"><p style="margin: 8px 0 0; font-weight: 700; color: {{ promoColor }}">{{ promoMsg }}</p></sc-if>
+</div>
+</sc-if>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between"><span>Subtotal</span><span>{{ subtotal }}</span></div>
+<sc-if value="{{ hasDiscount }}" hint-placeholder-val="{{ false }}"><div style="display: flex; justify-content: space-between"><span>Discount ({{ promoCode }})</span><span>{{ discountLabel }}</span></div></sc-if>
+<div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 18px"><span>Total</span><span>{{ total }}</span></div>
+<button type="button" data-click="{{ checkout }}" style="min-height: 52px; background: {{accent}}; color: #F6F6F3; border: 0; font: inherit; font-weight: 700; font-size: 16px; cursor: pointer">Checkout</button>
+</div>
+</aside>
+</div>
+</sc-if>
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box">
+<button type="button" aria-label="Close" data-click="{{ close }}" style="position: absolute; inset: 0; width: 100%; background: rgba(20,22,26,.65); border: 0; cursor: pointer"></button>
+<div role="dialog" aria-modal="true" aria-label="Product details" style="position: relative; z-index: 1; background: #F6F6F3; width: 100%; max-width: 880px; max-height: 100%; overflow-y: auto; display: flex; flex-wrap: wrap; border-radius: 20px">
+<div style="flex: 1 1 320px; background: #E8E6DF; padding: 40px 28px; display: flex; align-items: center; justify-content: center"><span class="{{ cur.cls }}" role="img" aria-label="{{ cur.name }}, {{ cur.color }}" style="max-width: 460px"></span></div>
+<div style="flex: 1 1 320px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+<h3 style="margin: 0; font-size: 32px; font-weight: 900; text-transform: uppercase">{{ cur.name }}</h3>
+<button type="button" aria-label="Close" data-click="{{ close }}" style="background: none; border: 0; cursor: pointer; width: 44px; height: 44px; color: #14161A; flex: none"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+</div>
+<div style="color: #5A5E66">{{ cur.color }}</div>
+<div style="display: flex; gap: 4px; flex-wrap: wrap">
+<sc-for list="{{ swatches }}" as="w" hint-placeholder-count="5">
+<button type="button" aria-label="{{ w.name }}" aria-pressed="{{ w.on }}" data-click="{{ w.pick }}" style="width: 44px; height: 44px; border-radius: 50%; background: none; border: 2px solid {{ w.ring }}; padding: 4px; cursor: pointer"><span style="display: block; width: 100%; height: 100%; border-radius: 50%; border: 1px solid rgba(20,22,26,.2); box-sizing: border-box; background: {{ w.fill }}"></span></button>
+</sc-for>
+</div>
+<div style="font-weight: 700; font-size: 24px">{{ cur.priceLabel }}</div>
+<p style="margin: 0; line-height: 1.6; color: #3F434A">[Product description]</p>
+<ul style="margin: 0; padding-left: 20px; line-height: 1.8; color: #3F434A"><li>[Material]</li><li>[Fit and sizing]</li><li>[Care instructions]</li></ul>
+<button type="button" data-click="{{ add }}" style="min-height: 52px; background: {{accent}}; color: #F6F6F3; border: 0; font: inherit; font-weight: 700; font-size: 16px; cursor: pointer">{{ addLabel }}</button>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</template>
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

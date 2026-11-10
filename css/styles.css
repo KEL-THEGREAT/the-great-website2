@@ -1,0 +1,65 @@
+/* the great: styles. Cap photos and the logo live in ../assets/images/ */
+body{margin:0; background-color: #4F4949; }
+a{color:inherit;text-decoration:none}a:hover{opacity:.75}
+.pad{box-sizing:border-box}
+.mi:hover{background:rgba(20,22,26,.08)}
+.logo{display:block;background:url(../assets/images/logo-light.png) no-repeat left center/contain}
+button,input{border-radius:12px}
+button[style*="inset: 0"]{border-radius:0}
+.cta a{border-radius:12px}
+.mi{border-radius:10px}
+.drawer{border-radius:24px 0 0 24px}
+.cap-wine{background-image:url(../assets/images/caps/cap-wine.webp)}
+.cap-sand-dark{background-image:url(../assets/images/caps/cap-sand-dark.webp)}
+@keyframes float{50%{transform:translateY(-26px) rotate(-1.5deg)}}
+@keyframes fshadow{50%{transform:scale(.78);opacity:.5}}
+.cap{display:block;width:100%;aspect-ratio:761/486;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 10px 10px rgba(20,22,26,.18))}
+.cap-black{background-image:url(../assets/images/caps/cap-black.webp)}
+.cap-sand{background-image:url(../assets/images/caps/cap-sand.webp)}
+.cap-forest{background-image:url(../assets/images/caps/cap-forest.webp)}
+.cap-navy{background-image:url(../assets/images/caps/cap-navy.webp)}
+.cap-burgundy{background-image:url(../assets/images/caps/cap-burgundy.webp)}
+header{position:sticky;top:0;z-index:40}
+.grid > .pc > button > span:first-child{transition:transform .35s ease,box-shadow .35s ease}
+.grid > .pc:hover > button > span:first-child{transform:translateY(-8px);box-shadow:0 18px 40px rgba(20,22,26,.18)}
+.grid > .pc .cap{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.grid > .pc:hover .cap{transform:scale(1.06) rotate(-2deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes slidein{from{transform:translateX(100%)}}
+@media (prefers-reduced-motion:no-preference){.marq{animation:marq 32s linear infinite}.drawer{animation:slidein .3s ease both}.float{animation:float 5s ease-in-out infinite}.fshadow{animation:fshadow 5s ease-in-out infinite}}
+@media (max-width:640px){header{position:static}}
+@keyframes rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes drift{to{transform:translateY(70px) scale(.92)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:no-preference){
+.hero .col:not(.heroart) > *{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .col:not(.heroart) > *:nth-child(2){animation-delay:.1s}
+.hero .col:not(.heroart) > *:nth-child(3){animation-delay:.2s}
+.hero .col:not(.heroart) > *:nth-child(4){animation-delay:.3s}
+}
+@supports (animation-timeline: view()){
+@media (prefers-reduced-motion:no-preference){
+.sec > *:not(.grid),.grid > .pc{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+.sec > *:nth-child(2),.grid > .pc:nth-child(2){animation-range:entry 8% entry 53%}
+.sec > *:nth-child(3),.grid > .pc:nth-child(3){animation-range:entry 16% entry 61%}
+.grid > .pc:nth-child(4){animation-range:entry 24% entry 69%}
+.parallax{animation:drift linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+.progress{animation:grow linear both;animation-timeline:scroll(root block)}
+}
+}
+@media (max-width:1024px){
+.pad{padding-left:40px !important;padding-right:40px !important}
+.sec{padding-top:64px !important;padding-bottom:64px !important}
+}
+@media (max-width:640px){
+.pad{padding-left:20px !important;padding-right:20px !important}
+.sec{padding-top:48px !important;padding-bottom:48px !important}
+.nav{order:3;width:100%;justify-content:space-between;gap:16px !important;font-size:14px !important}
+.hero{padding-top:32px !important;padding-bottom:56px !important;gap:32px !important}
+.col{flex-basis:100% !important}
+.heroart{padding:48px 20px 72px !important;border-radius:20px !important}
+.cta a{flex:1 1 100%;text-align:center}
+.h2{font-size:32px !important}
+.foot{gap:32px !important}
+.footcols{gap:28px !important}
+}
